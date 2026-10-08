@@ -1,0 +1,573 @@
+/* Tipografía general de toda la página */
+body {
+  /* Primero intenta Segoe UI; si el dispositivo no la tiene, usa la siguiente de la lista */
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0; /* quita el margen por defecto del navegador */
+}
+
+/* Barra superior: va arriba del menú */
+.topbar {
+  display: flex;
+  justify-content: space-between; /* info a la izquierda, redes a la derecha */
+  align-items: center;
+  padding: 6px 20px;
+  background-color: #192236;      /* cambia el color a tu gusto */
+  color: #ffffff;
+  font-size: 14px;
+
+}
+
+/* Contenedor de los dos "icono + texto" */
+.topbar-info {
+  display: flex;
+  gap: 20px;                      /* separación entre los dos items */
+}
+
+/* Cada "icono + texto" alineado en una línea */
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;                       /* espacio entre icono y texto */
+}
+
+/* Tamaño de los iconos pequeños de la izquierda */
+.topbar-item img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Contenedor de las 3 redes sociales */
+.topbar-social {
+  display: flex;
+  gap: 12px;
+}
+
+/* Tamaño de las imágenes de redes */
+.topbar-social img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Efecto al pasar el mouse por las redes */
+.topbar-social a:hover img {
+  opacity: 0.7;
+}
+
+/* Responsivo: en pantallas chicas se apilan y se centran */
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .topbar-info {
+    gap: 12px;
+  }
+}
+/* Que al hacer clic en el menú el scroll sea suave, no de golpe */
+html {
+  scroll-behavior: smooth;
+}
+/* Barra de menú */
+.menu {
+  position: sticky;      /* se queda pegada arriba al bajar */
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #f1e9e9;  /* la línea oscura de abajo, como en tu imagen */
+}
+
+/* Logo grande a la izquierda */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;   /* aquí controlas qué tan grande se ve el logo */
+  width: auto;    /* mantiene la proporción */
+  display: block;
+}
+
+/* Contenedor de los enlaces */
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;      /* separación entre enlaces */
+}
+
+/* Cada enlace: mayúsculas y letras separadas */
+.menu-links a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  padding: 6px 2px;                      /* espacio para que la rayita no quede pegada al texto */
+  border-bottom: 3px solid transparent;  /* rayita invisible por defecto (reserva el espacio) */
+  transition: color 0.2s, border-color 0.2s;  /* cambio suave */
+}
+
+/* Al pasar el mouse y en el enlace activo: texto azul + rayita de color */
+.menu-links a:hover,
+.menu-links a.activo {
+  border-bottom-color: #1d5a8a;  /* color de la rayita, puedes usar otro distinto */
+}
+
+/* Sin esto, el menú tapa el título de la sección al dar clic en un enlace */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Responsivo: en celular el logo arriba y los enlaces abajo en filas */
+@media (max-width: 900px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+  .logo img {
+    height: 55px;
+  }
+  .menu-links {
+    flex-wrap: wrap;           /* si no caben, bajan a otra línea */
+    justify-content: center;
+    gap: 12px 20px;
+  }
+  .menu-links a {
+    font-size: 14px;
+  }
+  section {
+    scroll-margin-top: 150px;  /* el menú en celular es más alto */
+  }
+}
+
+
+/* INICIO: el gif ocupa todo el primer plano */
+.inicio {
+  background-image: url("img/comunicaciones.gif"); /* ruta de tu gif */
+  background-size: cover;       /* el gif cubre todo el espacio sin deformarse */
+  background-position: center;  /* lo centra, recorta lo que sobre */
+  background-repeat: no-repeat;
+
+  /* Altura: toda la pantalla menos lo que ocupan la barra de info y el menú */
+  height: calc(100vh - 130px);  /* si queda cortada o sobra espacio, ajusta el 130px */
+  min-height: 350px;            /* para que no quede muy chico en pantallas bajitas */
+
+  /* Centra el texto justo en medio, vertical y horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del logo: lo dejamos sin márgenes */
+.inicio h1 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* El logo grande al centro */
+.inicio h1 img {
+  width: clamp(220px, 40vw, 600px);  /* mínimo 220px, máximo 600px, y se adapta al ancho de la pantalla */
+  height: auto;                      /* mantiene la proporción, sin deformar */
+  display: block;
+}
+
+/* Ajustes para celular */
+@media (max-width: 900px) {
+  .inicio {
+    height: calc(100vh - 200px);   /* en celular el menú es más alto (logo y enlaces en filas) */
+  }
+  .inicio h1 {
+    letter-spacing: 4px;
+  }
+}
+
+/* ¿QUIÉNES SOMOS? */
+.nosotros {
+  padding: 60px 30px;
+}
+
+/* Contenedor de las dos mitades */
+.nosotros-container {
+  display: flex;
+  align-items: center;   /* centra la imagen y el texto verticalmente entre sí */
+  gap: 50px;             /* separación entre imagen y texto */
+  max-width: 1200px;
+  margin: 0 auto;        /* centra todo el bloque en pantallas grandes */
+}
+
+/* Cada mitad ocupa el 50% (flex: 1 1 0 las hace iguales) */
+.nosotros-img,
+.nosotros-texto {
+  flex: 1 1 0;
+}
+
+/* La imagen se adapta a su mitad sin deformarse */
+.nosotros-img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;     /* recorta la imagen para llenar el espacio sin estirarla */
+  border-radius: 12px;
+  display: block;
+}
+
+/* Título y textos */
+.nosotros-texto h2 {
+  font-size: 32px;
+  color: #1f2a44;
+  margin: 0 0 20px;
+}
+
+.nosotros-texto p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+  margin: 0 0 16px;
+}
+
+/* Responsivo: en celular la imagen arriba y el texto abajo */
+@media (max-width: 800px) {
+  .nosotros-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .nosotros-img img {
+    height: 250px;   /* imagen más baja en celular */
+  }
+  .nosotros-texto h2 {
+    font-size: 26px;
+  }
+}
+
+/* Estado inicial: invisibles y desplazados */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left  { transform: translateX(-50px); }  /* la imagen viene desde la izquierda */
+.reveal-right { transform: translateX(50px); }   /* el texto viene desde la derecha */
+
+/* Cuando el JS les pone la clase "visible", llegan a su lugar */
+.reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Evita que el desplazamiento genere scroll horizontal en celular */
+.nosotros {
+  overflow: hidden;
+}
+
+
+/* LOCACIÓN: fondo gris clarito para distinguirla de la sección anterior */
+.locacion {
+  background-color: #f5f7fa;
+  padding: 60px 30px;
+  overflow: hidden;   /* evita scroll horizontal por la animación de deslizamiento */
+}
+
+.locacion-container {
+  max-width: 1200px;
+  margin: 0 auto;     /* centra el contenido */
+}
+
+/* Título y texto centrados */
+.locacion h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #1f2a44;
+  margin: 0 0 20px;
+}
+
+.locacion-texto {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444444;
+  max-width: 800px;
+  margin: 0 auto 40px;   /* auto a los lados lo centra y limita el ancho */
+}
+
+/* Las dos mitades: imagen y mapa */
+.locacion-media {
+  display: flex;
+  gap: 30px;
+}
+
+.locacion-img,
+.locacion-mapa {
+  flex: 1 1 0;              /* cada una ocupa el 50% */
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;         /* recorta lo que se salga de las esquinas redondeadas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* La imagen llena su mitad sin deformarse */
+.locacion-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* El mapa llena su mitad */
+.locacion-mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Responsivo: en celular se apilan, imagen arriba y mapa abajo */
+@media (max-width: 800px) {
+  .locacion-media {
+    flex-direction: column;
+  }
+  .locacion-img,
+  .locacion-mapa {
+    flex: none;
+    height: 280px;     /* más bajitos en celular */
+  }
+  .locacion h2 {
+    font-size: 26px;
+  }
+}
+
+/* COMISIONES */
+.comisiones {
+  padding: 60px 30px;
+  overflow: hidden;   /* evita scroll horizontal por la animación de deslizamiento */
+}
+
+.comisiones-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título centrado */
+.comisiones h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #1f2a44;
+  margin: 0 0 40px;
+}
+
+/* Las dos mitades: texto e imagen */
+.comisiones-contenido {
+  display: flex;
+  align-items: center;   /* centra el texto verticalmente respecto a la imagen */
+  gap: 50px;
+}
+
+.comisiones-texto,
+.comisiones-img {
+  flex: 1 1 0;           /* cada una ocupa el 50% */
+}
+
+.comisiones-texto p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+  margin: 0 0 16px;
+}
+
+/* Imagen con esquinas redondeadas, sombra y zoom al pasar el mouse */
+.comisiones-img {
+
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.comisiones-img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;     /* llena el espacio sin deformarse */
+  display: block;
+
+}
+
+.comisiones-img:hover img {
+  transform: scale(1.08);
+}
+
+/* Responsivo: en celular texto arriba e imagen abajo */
+@media (max-width: 800px) {
+  .comisiones-contenido {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .comisiones-img {
+    flex: none;          /* evita que se encoja en vertical */
+    width: 100%;
+  }
+  .comisiones-img img {
+    height: 250px;
+  }
+  .comisiones h2 {
+    font-size: 26px;
+  }
+}
+
+/**************************          FOOTER        ***************************/
+/* Footer completo: fondo oscuro */
+.footer {
+  background-color: #212429;
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+/* Contenedor de las columnas */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* una columna a cada lado */
+  gap: 40px;
+  flex-wrap: wrap;                /* en celular se acomodan una debajo de otra */
+  max-width: 1200px;
+  margin: 0 auto;                 /* centra todo el contenido */
+  padding: 0 30px 40px;
+}
+
+/* Columna 1 es la más ancha */
+.footer-about {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+/* Columna 2 */
+.footer-services {
+  flex: 1 1 250px;
+}
+
+/* Logo en blanco: este filtro convierte cualquier logo a blanco */
+.footer-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  margin-bottom: 25px;
+  filter: brightness(0) invert(1);
+}
+
+/* Textos del footer */
+.footer p {
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+/* Título de "Nuestros servicios" */
+.footer-services h3 {
+  font-size: 24px;
+  margin: 0 0 25px;
+}
+
+/* Lista de servicios sin viñetas */
+.footer-services ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-services li {
+  margin-bottom: 18px;
+}
+
+.footer-services a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-services a:hover {
+  color: #e9edf0;   /* azul clarito al pasar el mouse */
+}
+
+/* Fila de redes sociales */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+/* Cada red es un círculo azul */
+.footer-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;          /* esto lo hace circular */
+  background-color: #14507f;
+  transition: background-color 0.2s;
+}
+
+.footer-social a:hover {
+  background-color: #212429;
+}
+
+/* Ícono dentro del círculo */
+.footer-social img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Parte de abajo: línea y copyright */
+.footer-bottom {
+  border-top: 1px solid #3a3f47;  /* la línea delgada de separación */
+  text-align: center;
+  padding: 20px 30px 5px;
+}
+
+/* Responsivo: en celular todo centrado */
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-about {
+    max-width: 100%;
+  }
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;  /* centra el logo */
+  }
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+/* Columna 3 con el mismo ancho que la de servicios */
+.footer-contact {
+  flex: 1 1 250px;
+}
+
+/* El título "Contacto" con el mismo estilo que "Nuestros servicios" */
+.footer-contact h3 {
+  font-size: 24px;
+  margin: 0 0 25px;
+}
+
+/* Subtítulos: Correo y Teléfono */
+.footer-contact h4 {
+  font-size: 17px;
+  margin: 0 0 8px;
+  color: #ffffff;   /* azul clarito para diferenciarlos */
+}
+
+/* Enlaces de correo y teléfono */
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+  color: #5aa9e6;
+}

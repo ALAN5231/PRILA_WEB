@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta línea es la clave para que sea responsiva en celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prila Supply</title>
+    <!-- Aquí conectamos nuestro CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="topbar-info">
+            <span class="topbar-item">
+                <img src="img/telefono.png" alt="Teléfono">55-XXXX-XXXX</span>
+            <span class="topbar-item">
+                <img src="img/correo.png" alt="Correo">
+                info@prila.com
+            </span>
+        </div>
+
+        <div class="topbar-social">
+            <a href="#" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+
+    <header class="menu">
+        <a href="#inicio" class="logo">
+            <img src="img/logo_prila.png" alt="Logo Prila Supply">
+        </a>
+        <nav class="menu-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Quiénes somos</a>
+            <a href="#locacion">Locación</a>
+            <a href="#comisiones">Comisiones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="inicio">
+            <!-- Mantenemos el h1 (es bueno para buscadores) pero ahora lleva la imagen dentro -->
+            <h1>
+                <img src="img/logo2.png" alt="Prila Supply">
+            </h1>
+        </section>
+
+        <!-- ¿QUIÉNES SOMOS?: mitad imagen, mitad texto -->
+        <section id="nosotros" class="nosotros">
+            <div class="nosotros-container">
+
+                <!-- Mitad izquierda: imagen -->
+                <div class="nosotros-img reveal reveal-left">
+                    <!-- Guarda tu imagen en la carpeta img y cambia el nombre aquí -->
+                    <img src="img/nosotros.png" alt="Equipo de Prila Supply">
+                </div>
+
+                <!-- Mitad derecha: información -->
+                <div class="nosotros-texto reveal reveal-right">
+                    <h2>¿Quiénes somos?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- LOCACIÓN -->
+        <section id="locacion" class="locacion">
+            <div class="locacion-container">
+                <h2>Locación</h2>
+                <p class="locacion-texto">
+                    Trabajamos cerca de Fuente de Cibeles, una excelente locación cerca de metrobus durango de la linea
+                    2.
+                </p>
+
+                <div class="locacion-media">
+                    <!-- Mitad izquierda: tu imagen -->
+                    <div class="locacion-img reveal reveal-left">
+                        <img src="img/cibeles.jpg" alt="Nuestra ubicación">
+                    </div>
+
+                    <!-- Mitad derecha: mapa de Google (pega aquí tu iframe) -->
+                    <div class="locacion-mapa reveal reveal-right">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8290401246686!2d-99.16819112478592!3d19.419791281856845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3787cb5889%3A0x89c564734af67427!2sAT%26T!5e0!3m2!1ses!2smx!4v1791423146550!5m2!1ses!2smx"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- COMISIONES -->
+        <section id="comisiones" class="comisiones">
+            <div class="comisiones-container">
+                <h2>Comisiones</h2>
+
+                <div class="comisiones-contenido">
+                    <!-- Mitad izquierda: texto -->
+                    <div class="comisiones-texto reveal reveal-left">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.</p>
+                    </div>
+
+                    <!-- Mitad derecha: imagen -->
+                    <div class="comisiones-img reveal reveal-right">
+                        <img src="img/comisiones.jpg" alt="Comisiones">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+    <footer id="contacto" class="footer">
+        <div class="footer-container">
+
+            <!-- Columna 1: logo, descripción y redes -->
+            <div class="footer-col footer-about">
+                <!-- Se usa el mismo logo, el CSS lo pone en blanco -->
+                <img src="img/LOGO_BYN.png" alt="Logo Prila Supply" class="footer-logo">
+                <p>En Prila Supply estamos comprometidos en liderar el camino hacia un futuro más eficiente, inteligente
+                    y conectado.</p>
+                <p>Síguenos en nuestras redes sociales:</p>
+
+                <div class="footer-social">
+                    <a href="#" target="_blank" rel="noopener"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: servicios -->
+            <div class="footer-col footer-services">
+                <h3>Nuestros servicios</h3>
+                <ul>
+                    <li><a href="#">Servicio 1</a></li>
+                    <li><a href="#">Servicio 2</a></li>
+                    <li><a href="#">Servicio 3</a></li>
+                    <li><a href="#">Servicio 4</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: contacto -->
+            <div class="footer-col footer-contact">
+                <h3>Contacto</h3>
+
+                <h4>Correo</h4>
+                <!-- mailto: abre la app de correo al dar clic -->
+                <p>
+                    <a href="mailto:correo1@gmail.com">correo1@gmail.com</a><br>
+                    <a href="mailto:correo2@gmail.com">correo2@gmail.com</a>
+                </p>
+
+                <h4>Teléfono</h4>
+                <!-- tel: en celular permite llamar con un toque (cambia las X por tu número real, sin guiones ni espacios) -->
+                <p><a href="tel:+5255XXXXXXXX">+52 55-XXXX-XXXX</a></p>
+            </div>
+
+        </div>
+
+        <!-- Línea de abajo con el copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Todos los derechos reservados por Prila Supply</p>
+        </div>
+    </footer>
+
+    <!-- El JS va al final para que cargue después del contenido -->
+    <script src="script.js"></script>
+</body>
+
+</html>
