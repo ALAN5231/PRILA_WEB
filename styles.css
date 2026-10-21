@@ -17,6 +17,14 @@ body {
 
 }
 
+/* Enlaces de correo y teléfono */
+.topbar-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+
 /* Contenedor de los dos "icono + texto" */
 .topbar-info {
   display: flex;
